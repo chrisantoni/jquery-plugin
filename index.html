@@ -17,6 +17,7 @@
     <h1>Email Validation</h1>
     <form name="validation" method="post">
       Email:<input class="wrongEmail" id="inputEmail" type="text" name="email" placeholder="email"/>
+      <span id="wrongEmail">Email is not valid</span>
     </form>
 <script>
     $(document).ready(function() {
@@ -24,6 +25,7 @@
           if(validateEmail($("#inputEmail").val())){
             $('#inputEmail').addClass('validEmail')
             $('#inputEmail').removeClass('wrongEmail')
+            $('#wrongEmail').hide()
           }else{
             $('#inputEmail').addClass('wrongEmail')
             $('#inputEmail').removeClass('validEmail')
