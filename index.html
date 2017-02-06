@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>title</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.js"integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+    <script src="./lib/validate-email.js"></script>
+  <style>
+    .wrongEmail{
+      border: 3px solid red
+    }
+    .validEmail{
+      border: 3px solid green
+    }
+  </style>
+  </head>
+  <body>
+    <h1>Email Validation</h1>
+    <form name="validation" method="post">
+      Email:<input class="wrongEmail" id="inputEmail" type="text" name="email" placeholder="email"/>
+    </form>
+<script>
+    $(document).ready(function() {
+      $("#inputEmail" ).keyup(function() {
+          if(validateEmail($("#inputEmail").val())){
+            $('#inputEmail').addClass('validEmail')
+            $('#inputEmail').removeClass('wrongEmail')
+          }else{
+            $('#inputEmail').addClass('wrongEmail')
+            $('#inputEmail').removeClass('validEmail')
+          }
+      });
+});
+</script>
+  </body>
+</html>
